@@ -23,24 +23,23 @@ class Stack{
         size =0 ;
     }
 
-    int getsize(){
+    int getSize(){
         return size ;
     }
     bool isEmpty(){
-        return getsize()==0 ;
+        return getSize()==0 ;
     }
 
     int push(int element){
         Node *newNode = new Node(element);
-        
             newNode->next =head ;
-            newNode=head ;
-            size ++ ;
+            head=newNode ;
+            size++ ;
         
     }
     int pop(){
         if(isEmpty()){
-            return 0 ;
+            return -1 ;
         }
         int ans = head -> data ;
         Node *temp = head ;
@@ -51,8 +50,28 @@ class Stack{
     }
     int top(){
         if(isEmpty()){
-            return 0 ;
+            return -1 ;
         }
         return head->data ;
     }
 };
+
+
+int main(){
+    Stack s ;
+    s.push(1);
+    s.push(2);
+    s.push(3);
+
+    cout<<s.getSize()<<endl ;
+    cout<<s.top()<<endl ;
+    cout<<s.pop()<<endl ;
+    cout<<s.getSize()<<endl ;
+    cout<<s.top()<<endl ;
+
+
+
+
+
+
+}
